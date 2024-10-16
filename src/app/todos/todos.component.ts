@@ -1,5 +1,5 @@
-import {Component, computed, inject, Signal, signal, WritableSignal} from '@angular/core';
-import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Component, computed, inject, signal, WritableSignal} from '@angular/core';
+import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {TodoService} from '../services/todo.service';
 
 
