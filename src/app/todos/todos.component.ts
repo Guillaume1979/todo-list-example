@@ -15,22 +15,7 @@ export type Status = 'ALL' | 'ACTIVE' | 'COMPLETED';
     <form [formGroup]="todoForm">
       <input formControlName="title" (keyup.enter)="addTodo()">
     </form>
-    <h2>All todos</h2>
-    @for (todo of todoService.allTodos(); track todo) {
-      <div>
-        <input type="checkbox" [checked]="todo.isCompleted" (click)="todoService.changeStatus(todo.title)">
-        <span>{{ todo.title }}</span>
-        <button (click)="todoService.deleteTodo(todo.title)">X</button>
-      </div>
-    }
-    <h2>Active todos</h2>
-    @for (todo of todoService.activeTodos(); track todo) {
-      <div>
-        <span>{{ todo.title }}</span>
-      </div>
-    }
-
-    <h2>Displayed todos</h2>
+    <h2>Todos</h2>
     @for (todo of displayedTodos(); track todo) {
       <div>
         <input type="checkbox" [checked]="todo.isCompleted" (click)="todoService.changeStatus(todo.title)">
@@ -39,9 +24,9 @@ export type Status = 'ALL' | 'ACTIVE' | 'COMPLETED';
       </div>
     }
 
-        <button (click)="status.set('ALL')">ALL</button>
-        <button (click)="status.set('ACTIVE')">Active</button>
-        <button (click)="status.set('COMPLETED')">Completed</button>
+    <button (click)="status.set('ALL')">ALL</button>
+    <button (click)="status.set('ACTIVE')">Active</button>
+    <button (click)="status.set('COMPLETED')">Completed</button>
   `,
   styles: ``
 })
